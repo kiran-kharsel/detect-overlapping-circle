@@ -40,7 +40,8 @@ function Circle({x, y}){
         <div 
         style={{
             left: `${x}px`,
-            top: `${y}px`
+            top: `${y}px`,
+            transform: `translate(-50%, -50%)`
         }}
         className='circle'></div>
     )
