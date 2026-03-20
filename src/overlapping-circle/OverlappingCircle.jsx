@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import './style.css'
 
 function OverlappingCircle() {
-    const [x, setX] = useState(0)
-    const [y, setY] = useState(0)
+    // const [x, setX] = useState(0)
+    // const [y, setY] = useState(0)
+
+    const [circles, setCircles] = useState([])
 
     useEffect(()=>{
         document.addEventListener('click', handleDocumentClick)
@@ -11,22 +13,31 @@ function OverlappingCircle() {
         return ()=>{
             document.removeEventListener('click', handleDocumentClick)
         }
-    },[]);
+    },[circles]);
 
 
     function handleDocumentClick(event){
         const x = event.clientX
         const y = event.clientY
+        const newCircle = {x,y}
 
-        setX(x)
-        setY(y)
+        setCircles((prev) => {
+            const oldCircles = [...prev]
+            oldCircles.push(newCircle)
+
+            return oldCircles;
+        })
     };
 
 
 
   return (
     <div className='overlapping-circle'>
-        {x && y && <Circle x={x} y={y}/>}
+        {circles.map((circle, index) => {
+            return (
+                <Circle key={index} x={circle.x} y={circle.y}/>
+            )
+        })}
     </div>
   )
 }
