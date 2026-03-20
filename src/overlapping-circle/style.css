@@ -1,10 +1,9 @@
-.overlapping-circle{
 
-}
 
 .circle{
     height: 100px;
     width: 100px;
     background-color: tomato;
     border-radius: 50%;
+    position: absolute;
 }

@@ -35,8 +35,13 @@ export default OverlappingCircle
 
 
 // circle component
-function Circle(){
+function Circle({x, y}){
     return (
-        <div className='circle'></div>
+        <div 
+        style={{
+            left: `${x}px`,
+            top: `${y}px`
+        }}
+        className='circle'></div>
     )
 }
