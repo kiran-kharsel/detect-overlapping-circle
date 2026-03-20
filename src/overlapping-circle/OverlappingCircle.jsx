@@ -85,7 +85,7 @@ function Circle({ x, y, color }) {
             style={{
                 left: `${x}px`,
                 top: `${y}px`,
-                transform: `translate(-50%, -50%)`,
+                // transform: `translate(-50%, -50%)`,
                 backgroundColor: color ?? 'tomato',
             }}
             className='circle'></div>

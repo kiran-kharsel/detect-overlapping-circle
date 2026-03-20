@@ -6,4 +6,13 @@
     background-color: tomato;
     border-radius: 50%;
     position: absolute;
+    transform: translate(-50%, -50%) scale(0);
+    animation: animation 0.4s ease-in forwards;
+}
+
+
+@keyframes animation {
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
